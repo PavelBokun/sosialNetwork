@@ -17,6 +17,7 @@ const Footer = () => {
             alt=""
           />
           <div> ava+descr</div>
+          <p></p>
           <div>
             My posts
             <div>New post</div>
