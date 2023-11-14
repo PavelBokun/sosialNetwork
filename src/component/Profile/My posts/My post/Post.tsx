@@ -1,6 +1,6 @@
 import s from "./Mypost.module.css";
 
-export const Post = () => {
+export const Post = (props: { message: string; like: string }) => {
   return (
     <>
       <div className={s.item}>
@@ -9,11 +9,10 @@ export const Post = () => {
           alt="avatar"
         />
         <div>
+          {props.message}
           <div>
-            <span>like</span>
+            <span>{props.like+`👍`}</span>
           </div>
-
-          <p>Post</p>
         </div>
       </div>
     </>
