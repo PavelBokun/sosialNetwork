@@ -50,16 +50,6 @@
     width: 1200px;
     margin: 0 auto;
   }
-.header img {
-grid-area: h;
-width: 40px;
+  
 
-}
-.nav{
-grid-area: n;
-background-color: brown;
-}
-.content{
-grid-area:c;
-background-color: chartreuse;
-}
+

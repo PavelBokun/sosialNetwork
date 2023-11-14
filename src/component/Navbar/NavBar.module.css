@@ -1,0 +1,12 @@
+.nav {
+  grid-area: n;
+  background-color: brown;
+}
+.item {
+  color: white;
+  cursor: pointer;
+}
+.item :active{
+  color: rgb(8, 0, 255);
+  /* cursor:pointer; */
+}
