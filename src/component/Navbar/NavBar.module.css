@@ -1,12 +1,18 @@
 .nav {
   grid-area: n;
   background-color: brown;
+  padding: 20px;
 }
-.item {
+.item a {
   color: white;
   cursor: pointer;
+  text-decoration: none;
 }
 .item :active{
-  color: rgb(8, 0, 255);
+  color: rgb(174, 255, 0);
+  /* cursor:pointer; */
+}
+.item a.activeLinc{
+  color: rgb(255, 0, 85);
   /* cursor:pointer; */
 }
