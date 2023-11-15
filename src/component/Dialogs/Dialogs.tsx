@@ -9,4 +9,4 @@ Dialogs
     )
 }
 
-export default Dialogs
+export default Dialogs;

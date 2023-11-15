@@ -1,12 +1,11 @@
-
-import MyPosts from './My posts/MyPosts';
-import s from'./Profile.module.css'
+import MyPosts from "./My posts/MyPosts";
+import s from "./Profile.module.css";
 
 const Profile = () => {
   return (
     <>
-            <div >
-        Main content
+      <div>
+        Profile
         <div>
           <img
             src="https://i.pinimg.com/originals/b7/8b/80/b78b8002f46d41644079811854dfbf25.jpg"
@@ -14,10 +13,10 @@ const Profile = () => {
             alt=""
           />
           <div> ava+descr</div>
-          <p></p>
+          
           <p></p>
           <div>
-          <MyPosts />
+            <MyPosts />
           </div>
         </div>
       </div>
