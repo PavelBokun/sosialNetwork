@@ -1,7 +1,9 @@
 .nav {
   grid-area: n;
-  background-color: brown;
+  background-color: rgb(208, 119, 119);
   padding: 20px;
+  border-right: black 1px solid;
+  
 }
 .item a {
   color: white;
@@ -13,6 +15,8 @@
   /* cursor:pointer; */
 }
 .item a.activeLinc{
-  color: rgb(255, 0, 85);
-  /* cursor:pointer; */
+  color: rgb(108, 61, 92);
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  cursor:pointer;
 }
