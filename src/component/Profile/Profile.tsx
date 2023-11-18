@@ -1,5 +1,5 @@
 import MyPosts from "./My posts/MyPosts";
-import s from "./Profile.module.css";
+// import s from "./Profile.module.css";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = () => {
@@ -7,7 +7,7 @@ const Profile = () => {
     <>
       <div>
         <ProfileInfo />
-        <MyPosts />
+        <MyPosts  />
       </div>
     </>
   );

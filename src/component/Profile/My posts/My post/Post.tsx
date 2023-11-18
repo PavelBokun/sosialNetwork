@@ -1,6 +1,11 @@
 import s from "./Mypost.module.css";
+type postsDataType = {
+  id: number;
+  message: string;
+  like: string;
+};
 
-export const Post = (props: { message: string; like: string }) => {
+export const Post = (props: postsDataType) => {
   return (
     <>
       <div className={s.item}>
