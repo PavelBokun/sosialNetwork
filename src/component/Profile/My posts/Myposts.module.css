@@ -2,5 +2,11 @@
 .item{
     color: yellow;
 }
+.postBlock{
+    padding: 10px;
+}
+.textarea{
+    border-radius: 10px;
+}
 
 
