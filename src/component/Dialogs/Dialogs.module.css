@@ -5,19 +5,11 @@ flex-direction: row;
 justify-content:space-around;
 
 }
-.dialogsItems{
-padding: 10px;
-}
-.dialogsItems .active{
-    color:gold
-}
+
 .dialog{
 
 }
-.messages{
-    padding: 10px;
 
-}
 .message{
 
 }
