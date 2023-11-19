@@ -8,8 +8,10 @@ import Dialogs from "./component/Dialogs/Dialogs";
 import News from "./component/News/News";
 import Music from "./component/Music/Music";
 import Seting from "./component/Seting/Seting";
+import { AppProps} from ".";
 
-function App() {
+export  type AppPropsTYPE=AppProps
+function App(props:AppPropsTYPE) {
   return (
     <>
       <BrowserRouter>
@@ -18,8 +20,8 @@ function App() {
           <NavBar />
           <div className="app-wrapper-content">
             <Switch>
-              <Route path="/dialogs" render={()=><Dialogs  />} />
-              <Route path="/profile" render={()=><Profile />} />
+              <Route path="/dialogs" render={()=><Dialogs dialogsData={props.dialogsData} messageData={props.messagesData}    />} />
+              <Route path="/profile" render={()=><Profile postsData={props.postsData}   />} />
               <Route path="/news" render={()=><News />} />
               <Route path="/music" render={()=><Music />} />
               <Route path="/seting" render={()=><Seting />} />

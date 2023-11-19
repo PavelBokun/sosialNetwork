@@ -1,16 +1,17 @@
  
 
+
+// import { PostDataType } from "../../../App";
+import { PostDataType } from "../../..";
 import { Post } from "./My post/Post";
 import s from "./Myposts.module.css";
 
+ export type PropsMyPost={
+  postsData:PostDataType[]
+}
 
-const MyPosts = () => {
-  let postsData = [
-    { id: 1, message: "How are you", like: "2" },
-    { id: 2, message: "It is my first post", like: "7" },
-    { id: 3, message: "Sveta Hi", like: "2" },
-    { id: 4, message: "Victor big man", like: "2" },
-  ];
+const MyPosts = (props:PropsMyPost) => {
+  debugger
   return (
     <div className={s.postBlock}>
       <div>
@@ -24,7 +25,7 @@ const MyPosts = () => {
       My posts
       <div>New post</div>
       <div className={s.posts}>
-        {postsData.map((post) => (
+        {props.postsData.map((post) => (
           <Post message={post.message} like={post.like} id={post.id}/>
         ))}
         {/* <Post message={postsData[0].message} like= {postsData[0].like} />
