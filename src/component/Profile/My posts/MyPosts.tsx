@@ -2,7 +2,8 @@
 
 
 // import { PostDataType } from "../../../App";
-import { PostDataType } from "../../..";
+// import { PostDataType } from "../../..";
+import { PostDataType } from "../../../redux/state";
 import { Post } from "./My post/Post";
 import s from "./Myposts.module.css";
 
@@ -11,7 +12,6 @@ import s from "./Myposts.module.css";
 }
 
 const MyPosts = (props:PropsMyPost) => {
-  debugger
   return (
     <div className={s.postBlock}>
       <div>
@@ -28,8 +28,7 @@ const MyPosts = (props:PropsMyPost) => {
         {props.postsData.map((post) => (
           <Post message={post.message} like={post.like} id={post.id}/>
         ))}
-        {/* <Post message={postsData[0].message} like= {postsData[0].like} />
-        <Post message={postsData[1].message} like= {postsData[1].like}/> */}
+        
       </div>
     </div>
   );

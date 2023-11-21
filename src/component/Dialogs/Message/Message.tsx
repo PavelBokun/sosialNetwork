@@ -1,6 +1,7 @@
 
 // import { MessagesType } from '../../../App';
-import { MessagesType } from '../../..';
+// import { MessagesType } from '../../..';
+import { MessagesType } from '../../../redux/state';
 import s from './Message.module.css'
 
   

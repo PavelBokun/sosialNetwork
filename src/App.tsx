@@ -8,10 +8,11 @@ import Dialogs from "./component/Dialogs/Dialogs";
 import News from "./component/News/News";
 import Music from "./component/Music/Music";
 import Seting from "./component/Seting/Seting";
-import { AppProps} from ".";
-
-export  type AppPropsTYPE=AppProps
-function App(props:AppPropsTYPE) {
+// import {  StateType} from "./redux/state";
+import {RootStateType} from './redux/state'
+import { Frends } from "./component/Frends/Frends";
+// export  type AppPropsTYPE=StateType
+function App(props:{state:RootStateType}) {
   return (
     <>
       <BrowserRouter>
@@ -20,11 +21,13 @@ function App(props:AppPropsTYPE) {
           <NavBar />
           <div className="app-wrapper-content">
             <Switch>
-              <Route path="/dialogs" render={()=><Dialogs dialogsData={props.dialogsData} messageData={props.messagesData}    />} />
-              <Route path="/profile" render={()=><Profile postsData={props.postsData}   />} />
+              <Route path="/dialogs" render={()=><Dialogs dialogsData={props.state.dialogsPage.dialogsData} messagesData={props.state.dialogsPage.messagesData}    />} />
+              <Route path="/profile" render={()=><Profile postsData={props.state.profilePage.postsData} frendsData={props.state.frendsData}   />} />
               <Route path="/news" render={()=><News />} />
               <Route path="/music" render={()=><Music />} />
               <Route path="/seting" render={()=><Seting />} />
+              <Route path="/frends" render={()=><Frends frends={props.state.frendsData.frends} />} />
+              
             </Switch>
           </div>
         </div>

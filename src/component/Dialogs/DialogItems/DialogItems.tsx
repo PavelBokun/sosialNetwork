@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import s from './Dialog.module.css'
-import { DialogsItemsType } from "../../..";
+import { DialogsItemsType } from "../../../redux/state";
+// import { DialogsItemsType } from "../../..";
 // import { DialogsItemsType } from "../../../App";
 
 
@@ -10,6 +11,7 @@ import { DialogsItemsType } from "../../..";
     return (
       <div className={`${s.dialog} ${s.active}`}>
         <NavLink to={pash}>{props.name + props.faise}</NavLink>
+        
       </div>
     );
   };
