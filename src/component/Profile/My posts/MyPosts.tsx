@@ -3,6 +3,7 @@
 
 // import { PostDataType } from "../../../App";
 // import { PostDataType } from "../../..";
+import React from "react";
 import { PostDataType } from "../../../redux/state";
 import { Post } from "./My post/Post";
 import s from "./Myposts.module.css";
@@ -12,14 +13,19 @@ import s from "./Myposts.module.css";
 }
 
 const MyPosts = (props:PropsMyPost) => {
+ let newPostElement=React.createRef<HTMLTextAreaElement>()
+  let addPost=()=>{
+    let text=newPostElement.current?.value
+    alert(text)
+  }
   return (
     <div className={s.postBlock}>
       <div>
         <div>
-          <textarea className={s.textarea}></textarea>
+          <textarea className={s.textarea}  ref={newPostElement}></textarea>
         </div>
         <div>
-          <button>Add Post</button>
+          <button onClick={addPost}>Add Post</button>
         </div>
       </div>
       My posts

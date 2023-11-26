@@ -15,13 +15,13 @@ import { Frends } from "./component/Frends/Frends";
 function App(props:{state:RootStateType}) {
   return (
     <>
-      <BrowserRouter>
+      
         <div className="app-wrapper">
           <Header />
           <NavBar />
           <div className="app-wrapper-content">
             <Switch>
-              <Route path="/dialogs" render={()=><Dialogs dialogsData={props.state.dialogsPage.dialogsData} messagesData={props.state.dialogsPage.messagesData}    />} />
+              <Route path="/dialogs" render={()=><Dialogs dialogsData={props.state.dialogsPage.dialogsData} messagesData={props.state.dialogsPage.messagesData}     />} />
               <Route path="/profile" render={()=><Profile postsData={props.state.profilePage.postsData} frendsData={props.state.frendsData}   />} />
               <Route path="/news" render={()=><News />} />
               <Route path="/music" render={()=><Music />} />
@@ -31,7 +31,7 @@ function App(props:{state:RootStateType}) {
             </Switch>
           </div>
         </div>
-      </BrowserRouter>
+      
     </>
   );
 }

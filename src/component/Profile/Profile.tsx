@@ -1,16 +1,18 @@
 // import { PostDataType } from "../../App";
 // import { PostDataType } from "../..";
-import { FrendsDataType, PostDataType } from "../../redux/state";
+import { FrendsDataType, PostDataType, RootStateType } from "../../redux/state";
 import { Frends } from "../Frends/Frends";
 import MyPosts from "./My posts/MyPosts";
 // import s from "./Profile.module.css";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
- export type ProfileType={
+  type ProfileType={
   postsData:PostDataType[]
   frendsData:FrendsDataType
  }
-
+  // type ProfileType={
+  //   postsData: RootStateType
+  // }
 const Profile = (props:ProfileType) => {
 
   

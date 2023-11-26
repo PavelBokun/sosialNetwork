@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import {state} from './redux/state'
+import { BrowserRouter } from 'react-router-dom';
 // export type MessagesType = {
 //   message: string;
 //   id: number;
@@ -47,6 +48,8 @@ import {state} from './redux/state'
 // ];
 
 ReactDOM.render(
-    <App state={state}  />,
+  <BrowserRouter >
+    <App state={state}  />
+    </BrowserRouter > ,
   document.getElementById('root')
 );
