@@ -3,21 +3,27 @@
 
 // import { PostDataType } from "../../../App";
 // import { PostDataType } from "../../..";
-import React from "react";
+import React, { useRef } from "react";
 import { PostDataType } from "../../../redux/state";
 import { Post } from "./My post/Post";
 import s from "./Myposts.module.css";
+import { text } from "stream/consumers";
 
  export type PropsMyPost={
   postsData:PostDataType[]
+  addPost: (postText: string) => void 
 }
 
 const MyPosts = (props:PropsMyPost) => {
- let newPostElement=React.createRef<HTMLTextAreaElement>()
-  let addPost=()=>{
-    let text=newPostElement.current?.value
-    alert(text)
-  }
+ let newPostElement=useRef<HTMLTextAreaElement>(null)
+  // 
+  let addPost = () => {
+        if (newPostElement.current && newPostElement.current.value) {
+      let text: string = newPostElement.current.value;
+      props.addPost(text);
+      newPostElement.current.value= "";
+    }
+  };
   return (
     <div className={s.postBlock}>
       <div>

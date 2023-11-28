@@ -9,20 +9,22 @@ import News from "./component/News/News";
 import Music from "./component/Music/Music";
 import Seting from "./component/Seting/Seting";
 // import {  StateType} from "./redux/state";
-import {RootStateType} from './redux/state'
+import {RootStateType, addMessage, addPost} from './redux/state'
 import { Frends } from "./component/Frends/Frends";
 // export  type AppPropsTYPE=StateType
+
+
 function App(props:{state:RootStateType}) {
   return (
     <>
       
         <div className="app-wrapper">
           <Header />
-          <NavBar />
+          <NavBar  />
           <div className="app-wrapper-content">
             <Switch>
-              <Route path="/dialogs" render={()=><Dialogs dialogsData={props.state.dialogsPage.dialogsData} messagesData={props.state.dialogsPage.messagesData}     />} />
-              <Route path="/profile" render={()=><Profile postsData={props.state.profilePage.postsData} frendsData={props.state.frendsData}   />} />
+              <Route path="/dialogs" render={()=><Dialogs dialogsData={props.state.dialogsPage.dialogsData} messagesData={props.state.dialogsPage.messagesData} addMessage={addMessage}     />} />
+              <Route path="/profile" render={()=><Profile postsData={props.state.profilePage.postsData} frendsData={props.state.frendsData}   addPost={addPost} />} />
               <Route path="/news" render={()=><News />} />
               <Route path="/music" render={()=><Music />} />
               <Route path="/seting" render={()=><Seting />} />

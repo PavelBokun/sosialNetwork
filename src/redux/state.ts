@@ -1,3 +1,6 @@
+import { rerender } from "../render";
+
+
 export type MessagesType = {
   message: string;
   id: number;
@@ -28,9 +31,9 @@ export type SiedbarType = {};
 
 // let profilePage:ProfilePage={PostDataType[],DialogsItemsType[]}
 
-export type FrendsDataType={
-  frends: FrendsType[]
-}
+export type FrendsDataType = {
+  frends: FrendsType[];
+};
 
 export type ProfilePage = {
   postsData: Array<PostDataType>;
@@ -41,13 +44,16 @@ export type DialogsPageType = {
   messagesData: MessagesType[];
 };
 
-
+// type AddPostType={
+//   addPost: ()=>void
+// }
 export type SideBarType = {};
 export type RootStateType = {
   profilePage: ProfilePage;
   dialogsPage: DialogsPageType;
   siedbar: SiedbarType;
-  frendsData:FrendsDataType
+  frendsData: FrendsDataType;
+ 
 };
 
 //   let postsData:PostDataType[]= [
@@ -96,11 +102,30 @@ export const state: RootStateType = {
     ],
   },
   siedbar: {},
-  frendsData:{
-frends:[
-  { id: 1, name: "Ahdrey2", faise: " 🧒" },
-  { id: 2, name: "Sveta2", faise: " 👩‍🦰" },
-  { id: 3, name: "Victor3", faise: " 👨‍🦱" }
-]
-  } 
+  frendsData: {
+    frends: [
+      { id: 1, name: "Ahdrey2", faise: " 🧒" },
+      { id: 2, name: "Sveta2", faise: " 👩‍🦰" },
+      { id: 3, name: "Victor3", faise: " 👨‍🦱" },
+    ],
+  },
+  
+};
+ export let addPost = (newMessege:string) => {
+  let newPost = {
+    id: 5,
+    message: newMessege,
+    like: "2",
+  };
+  state.profilePage.postsData.push(newPost)
+  rerender(state)
+};
+
+export let addMessage = (addMessege:string) => {
+  let addNewMessage= {
+    id: 5,
+    message: addMessege,
+  };
+  state.dialogsPage.messagesData.push(addNewMessage)
+  rerender(state)
 };

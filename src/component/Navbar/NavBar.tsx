@@ -1,6 +1,10 @@
 import { NavLink } from "react-router-dom";
 import s from "./NavBar.module.css";
 import { Frends } from "../Frends/Frends";
+import { FrendsType } from "../../redux/state";
+
+
+
 
 const NavBar = () => {
   return (
@@ -23,7 +27,7 @@ const NavBar = () => {
       <span></span>
       <div className={s.item}>
         <NavLink to="/frends" activeClassName={s.activeLinc}>Frends</NavLink>
-        
+        {/* <Frends   /> */}
       </div>
     </nav>
   );

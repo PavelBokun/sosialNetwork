@@ -8,13 +8,14 @@ import {
   MessagesType,
   RootStateType,
 } from "../../redux/state";
-import React from "react";
+import React, { useRef } from "react";
 // import { DialogsItemsType, MessagesType } from "../..";
 // import { DialogsItemsType, MessagesType } from "../../App";
 
 export type DialogsMessageProps = {
   dialogsData: DialogsItemsType[];
   messagesData: MessagesType[];
+  addMessage: (addNewMessage: string) => void
 };
 
 const Dialogs = (props: DialogsMessageProps) => {
@@ -22,10 +23,15 @@ const Dialogs = (props: DialogsMessageProps) => {
   //   <DialogsItems name={el.name} id={el.id} faise={el.faise} />
   //   })
   //   let messageElement=props.messagesData.map((el)=>{<Message message={el.message} id={el.id} />})
-  let newMessageElement=React.createRef<HTMLTextAreaElement>()
+  const newMessageElement = useRef<HTMLTextAreaElement>(null);
+
   let addMessage=()=>{
-    let text=newMessageElement.current?.value
-    alert(text)
+if (newMessageElement.current && newMessageElement.current.value) {
+  let text: string = newMessageElement.current.value;
+  props.addMessage(text);
+  newMessageElement.current.value= "";
+}
+
   }
   return (
     <div className={s.dialogs}>
