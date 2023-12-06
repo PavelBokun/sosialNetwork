@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {RootStateType, addPost} from './redux/state'
+import {RootStateType, addPost, updateNewPostText} from './redux/state'
 import { BrowserRouter } from 'react-router-dom';
 
 // export type MessagesType = {
@@ -56,4 +56,4 @@ import { BrowserRouter } from 'react-router-dom';
   
 }
 
-// addPost={addPost}
+

@@ -1,28 +1,25 @@
-// import { PostDataType } from "../../App";
-// import { PostDataType } from "../..";
-import { FrendsDataType, PostDataType, RootStateType, addPost } from "../../redux/state";
-import { Frends } from "../Frends/Frends";
+import { FrendsDataType, NewPostTextType, PostDataType,  addPost, updateNewPostText } from "../../redux/state";
 import MyPosts from "./My posts/MyPosts";
-// import s from "./Profile.module.css";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-  type ProfileType={
+  type ProfilePropsType={
   postsData:PostDataType[]
   frendsData:FrendsDataType
+ newpost:NewPostTextType
   addPost: (postText: string) => void
+  updateNewPostText:(NewText: string)=>void
  }
-  // type ProfileType={
-  //   postsData: RootStateType
-  // }
-const Profile = (props:ProfileType) => {
+ 
+const Profile = (props:ProfilePropsType) => {
 
   
   return (
     <>
       <div>
         <ProfileInfo />
-        <MyPosts postsData={props.postsData} addPost={addPost}   />
-        <Frends frends={props.frendsData.frends} />
+        <MyPosts postsData={props.postsData} addPost={addPost} newpost={props.newpost}  updateNewPostText={updateNewPostText}      />
+        {/* <Frends frends={props.frendsData.frends} /> */}
+
         
       </div>
     </>

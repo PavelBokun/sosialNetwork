@@ -1,6 +1,5 @@
 import { rerender } from "../render";
 
-
 export type MessagesType = {
   message: string;
   id: number;
@@ -23,20 +22,14 @@ export type PostDataType = {
   like: string;
 };
 export type SiedbarType = {};
-//   export type AppProps={
-//     postsData:PostDataType[]
-//     dialogsData:DialogsItemsType[]
-//     messagesData:MessagesType[]
-//   }
-
-// let profilePage:ProfilePage={PostDataType[],DialogsItemsType[]}
 
 export type FrendsDataType = {
   frends: FrendsType[];
 };
-
+export type NewPostTextType = string;
 export type ProfilePage = {
   postsData: Array<PostDataType>;
+  NewpostText: NewPostTextType;
 };
 
 export type DialogsPageType = {
@@ -44,16 +37,12 @@ export type DialogsPageType = {
   messagesData: MessagesType[];
 };
 
-// type AddPostType={
-//   addPost: ()=>void
-// }
 export type SideBarType = {};
 export type RootStateType = {
   profilePage: ProfilePage;
   dialogsPage: DialogsPageType;
   siedbar: SiedbarType;
   frendsData: FrendsDataType;
- 
 };
 
 //   let postsData:PostDataType[]= [
@@ -76,7 +65,6 @@ export type RootStateType = {
 //     { id: 3, message: "Sveta Hi" },
 //     { id: 4, message: "Victor big man" },
 //   ];
-
 export const state: RootStateType = {
   profilePage: {
     postsData: [
@@ -86,6 +74,7 @@ export const state: RootStateType = {
       { id: 4, message: "Victor big man", like: "2" },
       { id: 4, message: "Victor big man", like: "2" },
     ],
+    NewpostText: "",
   },
   dialogsPage: {
     dialogsData: [
@@ -104,28 +93,34 @@ export const state: RootStateType = {
   siedbar: {},
   frendsData: {
     frends: [
-      { id: 1, name: "Ahdrey2", faise: " 🧒" },
-      { id: 2, name: "Sveta2", faise: " 👩‍🦰" },
-      { id: 3, name: "Victor3", faise: " 👨‍🦱" },
+      { id: 1, name: "Ahdrey ", faise: "  🧒" },
+      { id: 2, name: "Sveta ", faise: "  👩‍🦰" },
+      { id: 3, name: "Victor ", faise: "  👨‍🦱" },
     ],
   },
-  
 };
- export let addPost = (newMessege:string) => {
+export let addPost = (newMessege: string) => {
   let newPost = {
     id: 5,
     message: newMessege,
     like: "2",
   };
-  state.profilePage.postsData.push(newPost)
-  rerender(state)
+  state.profilePage.postsData.push(newPost);
+  state.profilePage.NewpostText = "";
+
+  rerender(state);
 };
 
-export let addMessage = (addMessege:string) => {
-  let addNewMessage= {
+export let updateNewPostText = (NewText: string) => {
+  state.profilePage.NewpostText = NewText;
+  rerender(state);
+};
+
+export let addMessage = (addMessege: string) => {
+  let addNewMessage = {
     id: 5,
     message: addMessege,
   };
-  state.dialogsPage.messagesData.push(addNewMessage)
-  rerender(state)
+  state.dialogsPage.messagesData.push(addNewMessage);
+  rerender(state);
 };

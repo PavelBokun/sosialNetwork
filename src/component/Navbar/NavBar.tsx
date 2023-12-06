@@ -1,12 +1,14 @@
 import { NavLink } from "react-router-dom";
 import s from "./NavBar.module.css";
 import { Frends } from "../Frends/Frends";
-import { FrendsType } from "../../redux/state";
+import { FrendsDataType, FrendsType } from "../../redux/state";
+
+type NavBarType={
+  frends:FrendsDataType
+}
 
 
-
-
-const NavBar = () => {
+const NavBar = (props:NavBarType) => {
   return (
     <nav className={s.nav}>
       <div className={s.item} >
@@ -27,7 +29,7 @@ const NavBar = () => {
       <span></span>
       <div className={s.item}>
         <NavLink to="/frends" activeClassName={s.activeLinc}>Frends</NavLink>
-        {/* <Frends   /> */}
+        <Frends frends={props.frends.frends}   />
       </div>
     </nav>
   );

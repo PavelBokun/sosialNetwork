@@ -1,0 +1,11 @@
+.frends{
+    display: flex;
+    flex-direction: row;
+    color: green;
+    font-weight: bold;
+    align-items: center;
+}
+
+.faise{
+    padding-left: 10px;
+}

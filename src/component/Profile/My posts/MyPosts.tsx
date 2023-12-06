@@ -4,15 +4,18 @@
 // import { PostDataType } from "../../../App";
 // import { PostDataType } from "../../..";
 import React, { useRef } from "react";
-import { PostDataType } from "../../../redux/state";
+import { NewPostTextType, PostDataType } from "../../../redux/state";
 import { Post } from "./My post/Post";
 import s from "./Myposts.module.css";
 import { text } from "stream/consumers";
 
  export type PropsMyPost={
-  postsData:PostDataType[]
+   postsData:PostDataType[]
+  newpost:NewPostTextType
   addPost: (postText: string) => void 
+  updateNewPostText:(NewText: string)=>void
 }
+
 
 const MyPosts = (props:PropsMyPost) => {
  let newPostElement=useRef<HTMLTextAreaElement>(null)
@@ -21,14 +24,24 @@ const MyPosts = (props:PropsMyPost) => {
         if (newPostElement.current && newPostElement.current.value) {
       let text: string = newPostElement.current.value;
       props.addPost(text);
-      newPostElement.current.value= "";
+      
+      
     }
   };
+  let onChenge=()=>{
+    if (newPostElement.current && newPostElement.current.value) {
+      let text: string = newPostElement.current.value;
+      props.updateNewPostText(text)
+      
+
+    }
+  }
   return (
     <div className={s.postBlock}>
       <div>
         <div>
-          <textarea className={s.textarea}  ref={newPostElement}></textarea>
+          <textarea className={s.textarea}  ref={newPostElement} onChange={onChenge} value={props.newpost
+          } ></textarea>
         </div>
         <div>
           <button onClick={addPost}>Add Post</button>
@@ -45,4 +58,4 @@ const MyPosts = (props:PropsMyPost) => {
     </div>
   );
 };
-export default MyPosts;
+export default MyPosts
